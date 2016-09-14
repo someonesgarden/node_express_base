@@ -2,10 +2,6 @@ FROM node:argon
 
 MAINTAINER 0.1 Daisuke Nishimura d@someonesgarden.org
 
-ENV JAVA_HOME=/usr/lib/jvm/default-java
-ENV PATH=$JAVA_HOME/bin:$PATH
-
-
 RUN groupadd -r express && useradd -r -g express express
 
 #apt-get
@@ -15,9 +11,12 @@ vim \
 git
 
 # Install JRE + JDK
-RUN apt-get update -y && \
-apt-get install default-jre -y && \
-apt-get install  default-jdk -y
+#ENV JAVA_HOME=/usr/lib/jvm/default-java
+#ENV PATH=$JAVA_HOME/bin:$PATH
+
+#RUN apt-get update -y && \
+#apt-get install default-jre -y && \
+#apt-get install  default-jdk -y
 
 #RUN \
 #    echo "===> add webupd8 repository..."  && \
