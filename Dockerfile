@@ -8,7 +8,14 @@ RUN groupadd -r express && useradd -r -g express express
 RUN apt-get update && \
 apt-get install -y \
 vim \
-git
+libfreetype6-dev \
+libfontconfig1-dev \
+wget \
+bzip2 \
+git \
+python \
+unifont
+
 
 # Install JRE + JDK
 #ENV JAVA_HOME=/usr/lib/jvm/default-java
